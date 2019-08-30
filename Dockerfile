@@ -114,11 +114,11 @@ EXPOSE 80
 
 STOPSIGNAL SIGTERM
 ####################Copy nginx conf########
+RUN apk add --update --no-cache supervisor
 COPY ./dockersupport/nginx-config.conf /etc/nginx/conf.d/default.conf
 COPY ./www/ /var/www/
 COPY ./dockersupport/start.sh /usr/local/bin/
 COPY ./dockersupport/supervisord.conf $SUPERVISOR_CONF_FILE
 RUN chmod u+x /usr/local/bin/start.sh
-RUN apk add --update --no-cache supervisor
 ###########################################
 CMD ["start.sh"]
