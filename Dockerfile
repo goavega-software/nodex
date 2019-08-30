@@ -4,7 +4,7 @@ ENV NGINX_VERSION 1.17.3
 ENV NJS_VERSION   0.3.5
 ENV PKG_RELEASE   1
 #########IMAGE RELATED ENVs###############
-ENV SUPERVISOR_CONF_FILE /etc/supevisord.conf
+ENV SUPERVISOR_CONF_FILE /etc/supervisord.conf
 ##########################################
 RUN set -x \
 # create nginx user/group first, to be consistent throughout docker variants
